@@ -1,0 +1,194 @@
+:root {
+    --blue: #3f3f95;
+    --yellow: #faca28;
+    --gradient: linear-gradient(to right, #3f3f95 0%, #faca28 100%);
+    --leftgradient: linear-gradient(to right, #faca28 0%, #25257c 100%);
+    --borderGradient: linear-gradient(to right, #faca28, #25257c);
+    --smallText: #a8a8a8;
+    --mediumText: #dfdfdf;
+    --buttonColor: #3d3d3d;
+    --backgroundColor: #f9f9f9;
+    --white: #ffffff;
+    --dark: #252525;
+    --grey: #4a4a4a;
+    --endFooter: #2b2b2b;
+  }
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    
+    .nav-container {
+      background: var(--dark);
+      width: 100%;
+      padding: 0%;
+    }
+    .nav-brand{
+      display: flex;
+      width: 50%;
+    }
+    .company-logo {
+      width: 10%;
+      height: 60px;
+      margin-left: 10%;
+    }
+    .logo-heading{
+      font-size: 20px;
+      font-family: 'gabriola';
+      margin-top: 2%;
+      margin-left: 2%;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+   
+    .nav-btn {
+      color: var(--white);
+      font-size: 0px;
+      font-weight: 100;
+      border: none;
+      background: none;
+      margin: 1%;
+      white-space: nowrap;
+      float: right;
+      padding: 2%;
+   
+      
+    }
+    
+    .nav-btn:hover {
+      cursor: pointer;
+      background: var(--leftgradient);
+      color: var(--white);
+      border-radius: 5px;
+    }
+    
+    .nav-hamburguer-icon {
+      font-size: 1.2em;
+      display: block;
+      color:var(--white);
+    }
+    
+    .nav-hamburguer-icon:hover {
+      color: var(--yellow);
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em;
+    }
+    
+    
+    .nav-links {
+      display: none;
+    }
+    
+    @media screen and (min-width: 600px) {
+      .nav-links {
+        width: 25%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+      }
+    
+      .nav-links > a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2em;
+      }
+    
+      .nav-links > a:not(:last-child) {
+        margin-right: 1em;
+      }
+    
+      .nav-hamburguer-icon {
+        display: none;
+      }
+    
+      .overlay-container-hidden {
+        display: none;
+      }
+    }
+    @media only screen and (max-device-width: 768px) {
+      .company-logo {
+        width: 35%;
+        display: flex;
+        margin: auto;
+      }
+    }
+    
+    /*Overlay menu classes */
+    .overlay-container-show {
+      overflow: hidden;
+      position: fixed;
+      background-color: black;
+      opacity: 0.9;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+      transition: left linear 500ms;
+    }
+    
+    .overlay-container-hidden {
+      overflow: hidden;
+      position: fixed;
+      background-color: black;
+      opacity: 0.9;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: -600px;
+      width: 100%;
+      z-index: 1;
+      transition: left linear 500ms;
+    }
+    
+    .overlay-buttonClose {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-right: 0.5em;
+      font-size: 4em;
+      color: var(--white);
+    }
+    
+    .overlay-menu-wrapper {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+    
+    .overlay-menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      margin-bottom: 10em;
+    }
+    
+    .overlay-menu a {
+      font-size: 3em;
+      font-weight: 100;
+      text-decoration: none;
+      color: #818181;
+      transition: 0.3s;
+    }
+    
+    .overlay-menu a:hover,
+    .overlay-menu a:focus {
+      color: #f1f1f1;
+    }
+    
+    .overlay-menu-item:not(:last-child) {
+      margin-bottom: 0.3em;
+    }
+    
